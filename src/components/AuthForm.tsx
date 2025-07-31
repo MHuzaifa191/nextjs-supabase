@@ -28,7 +28,7 @@ export function AuthForm({ type }: { type: "login" | "signup" }) {
       console.error("Validation errors:", res.validationErrors);
       toast.error("Please check your input");
     } else if (res?.data?.success) {
-      toast.success("Successfully logged in");
+      toast.success(type === "login" ? "Successfully logged in" : "Successfully signed up");
     } else {
       toast.error("Something went wrong");
     }
